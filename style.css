@@ -16,47 +16,62 @@ body{
 }
 
 /* Navbar */
-
-header{
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    background:#6a0dad;
-    z-index:1000;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+/* ===== HEADER ===== */
+.header {
+    width: 100%;
+    background: #ffffff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 20px;
+/* ===== LOGO ===== */
+.logo h1 {
+    font-size: 38px;
+    color: #6a0dad;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-.logo{
-    color:#fff;
-    font-size:28px;
-    font-weight:700;
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
 }
 
-.nav-links{
-    list-style:none;
-    display:flex;
-    gap:30px;
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-size:17px;
-    transition:.3s;
+.navbar a:hover,
+.navbar a.active {
+    color: #6a0dad;
 }
 
-.nav-links a:hover{
-    color:#ffd700;
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 30px;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 17px;
+    }
 }
 
 /* Hero Section */
