@@ -1,28 +1,34 @@
-/* Skills Section */
+/* ===========================
+   Skills Section
+=========================== */
+
+#skills{
+    background:#ffffff;
+}
 
 .skills-container{
+    max-width:1200px;
+    margin:auto;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:30px;
-    margin-top:40px;
+    gap:25px;
 }
 
 .card{
-    width:220px;
-    background:white;
+    width:250px;
+    background:#fff;
     padding:30px;
-    border-radius:15px;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    transition:0.4s;
-    cursor:pointer;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:0.3s ease;
 }
 
 .card:hover{
     transform:translateY(-10px);
     background:#6a0dad;
-    color:white;
+    color:#fff;
 }
 
 .card i{
@@ -39,16 +45,19 @@
     font-size:24px;
 }
 
-/* Contact Section */
+
+/* ===========================
+   Contact Section
+=========================== */
 
 #contact{
+    background:#f5f3ff;
     text-align:center;
-    background:#f8f8ff;
 }
 
 #contact p{
-    font-size:20px;
     margin:15px 0;
+    font-size:18px;
 }
 
 .social{
@@ -56,17 +65,18 @@
 }
 
 .social a{
-    display:inline-block;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
     width:50px;
     height:50px;
-    line-height:50px;
-    text-align:center;
-    background:#6a0dad;
-    color:white;
-    border-radius:50%;
     margin:10px;
+    background:#6a0dad;
+    color:#fff;
+    border-radius:50%;
+    text-decoration:none;
     font-size:22px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .social a:hover{
@@ -74,67 +84,77 @@
     transform:scale(1.1);
 }
 
-/* Footer */
+
+/* ===========================
+   Footer
+=========================== */
 
 footer{
     background:#6a0dad;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:20px;
-    font-size:16px;
 }
 
-/* Responsive Design */
 
-@media(max-width:768px){
+/* ===========================
+   Mobile Responsive
+=========================== */
 
-.navbar{
-    flex-direction:column;
-}
+@media (max-width:768px){
 
-.nav-links{
-    flex-direction:column;
-    margin-top:15px;
-}
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
 
-.nav-links li{
-    margin:10px 0;
-}
+    .nav-links{
+        flex-direction:column;
+        width:100%;
+        align-items:center;
+        gap:15px;
+    }
 
-.hero{
-    flex-direction:column-reverse;
-    text-align:center;
-    padding-top:180px;
-}
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding-top:170px;
+        gap:30px;
+    }
 
-.hero-text{
-    width:100%;
-}
+    .hero-text h1{
+        font-size:35px;
+    }
 
-.hero-image{
-    width:100%;
-    margin-bottom:30px;
-}
+    .hero-text h3{
+        font-size:22px;
+    }
 
-.hero-image img{
-    width:250px;
-}
+    .hero-text p{
+        font-size:16px;
+        line-height:28px;
+    }
 
-.hero-text h1{
-    font-size:38px;
-}
+    .hero-image img{
+        width:220px;
+    }
 
-.skills-container{
-    flex-direction:column;
-    align-items:center;
-}
+    section h2{
+        font-size:30px;
+    }
 
-.card{
-    width:90%;
-}
+    .skills-container{
+        flex-direction:column;
+        align-items:center;
+    }
 
-section{
-    padding:60px 20px;
-}
+    .card{
+        width:90%;
+        max-width:320px;
+    }
 
+    #about p,
+    #contact p{
+        font-size:16px;
+    }
 }
