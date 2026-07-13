@@ -1,62 +1,148 @@
-// Smooth Scroll for Navigation Links
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
+body{
+    background:#f5f3ff;
+    color:#333;
+    overflow-x:hidden;
+}
 
+/* Navbar */
 
-// Reveal Sections on Scroll
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#6a0dad;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
 
-const sections = document.querySelectorAll("section");
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+}
 
-window.addEventListener("scroll", () => {
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+}
 
-    sections.forEach(section => {
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
 
-        const sectionTop = section.getBoundingClientRect().top;
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+}
 
-        if(sectionTop < window.innerHeight - 100){
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-        }
+.nav-links a:hover{
+    color:#ffd700;
+}
 
-    });
+/* Hero Section */
 
-});
+.hero{
+    max-width:1200px;
+    margin:auto;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    padding:120px 20px 60px;
+}
 
+.hero-text{
+    flex:1;
+}
 
-// Initial Style for Animation
+.hero-text h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
 
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(50px)";
-    section.style.transition = "all 0.8s ease";
-});
+.hero-text span{
+    color:#6a0dad;
+}
 
+.hero-text h3{
+    font-size:28px;
+    color:#6a0dad;
+    margin-bottom:20px;
+}
 
-// Navbar Shadow on Scroll
+.hero-text p{
+    font-size:18px;
+    line-height:30px;
+    margin-bottom:30px;
+}
 
-const header = document.querySelector("header");
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#6a0dad;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
 
-window.addEventListener("scroll", () => {
+.btn:hover{
+    background:#4b0082;
+}
 
-    if(window.scrollY > 50){
-        header.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
-    }else{
-        header.style.boxShadow = "none";
-    }
+.hero-image{
+    flex:1;
+    text-align:center;
+}
 
-});
+.hero-image img{
+    width:320px;
+    max-width:100%;
+    border-radius:50%;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
 
+/* Common Section */
 
-// Welcome Message
+section{
+    padding:80px 20px;
+}
 
-window.onload = () => {
-    console.log("Welcome to My Portfolio Website!");
-};
+section h2{
+    text-align:center;
+    color:#6a0dad;
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+#about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+#about p{
+    font-size:18px;
+    line-height:30px;
+}
