@@ -85,21 +85,29 @@ nav .nav-links a:hover {
     font-weight: 600;
     font-size: 1rem;
     transition: background 0.3s ease;
+}.hero-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #eef2ff; /* Light accent background from mockup */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.hero-image img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
 }
 
 .btn:hover {
     background: #5247e7;
 }
 
-.hero-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #e2e8f0;
-    display: block;
-    margin: 0 auto;
-}
+
 
 .container {
     max-width: 800px;
