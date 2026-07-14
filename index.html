@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Harshit Kumar | Portfolio</title>
 
     <!-- CSS -->
@@ -11,59 +13,61 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Lottie Animation -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
 
-    <!-- Background -->
+    <!-- Background Animation -->
     <div class="bg-animation"></div>
 
-    <!-- Header -->
+    <!-- ================= HEADER ================= -->
+
     <header>
 
         <a href="#" class="logo">
             Harshit<span>.</span>
         </a>
 
-       <button class="menu-toggle">☰</button>
-
-<ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
-        <div class="menu-btn">
+        <button class="menu-toggle">
             <i class="fa-solid fa-bars"></i>
-        </div>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
     </header>
 
-    <!-- Hero Section -->
+    <!-- ================= HERO ================= -->
 
     <section class="hero" id="home">
 
         <div class="hero-text">
 
-            <p class="welcome">👋 Welcome to my Portfolio</p>
+            <p class="welcome">
+                👋 Welcome to My Portfolio
+            </p>
 
-            <h1>Hi, I'm <span>Harshit Kumar</span></h1>
+            <h1>
+                Hi, I'm <span>Harshit Kumar</span>
+            </h1>
 
             <h3>
                 <span id="typing"></span>
             </h3>
 
             <p class="hero-description">
-
-                Passionate BCA student focused on creating
-                beautiful, responsive and user-friendly websites
-                using modern web technologies.
-
+                I'm a passionate BCA student and Frontend Web Developer who enjoys creating modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, and modern UI design.
             </p>
 
             <div class="hero-buttons">
@@ -91,190 +95,15 @@
         </div>
 
         <div class="hero-animation">
-    <lottie-player
-        src="https://assets2.lottiefiles.com/packages/lf20_qp1q7mct.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay>
-    </lottie-player>
-</div>
 
-    </section>
-
-    <!-- About -->
-
-    <section id="about" class="about">
-
-        <div class="section-title">
-            <h2>About Me</h2>
-        </div>
-
-        <div class="about-container">
-
-            <div class="about-card">
-
-                <h3>Who Am I?</h3>
-
-                <p>
-
-                    I'm Harshit Kumar, a BCA student and Frontend
-                    Developer. I enjoy designing modern websites,
-                    learning new technologies, and building projects
-                    that solve real-world problems.
-
-                </p>
-
-                <div class="about-info">
-
-                    <div>
-                        <span>Name</span>
-                        <h4>Harshit Kumar</h4>
-                    </div>
-
-                    <div>
-                        <span>Education</span>
-                        <h4>BCA Student</h4>
-                    </div>
-
-                    <div>
-                        <span>Location</span>
-                        <h4>Ahmedabad, India</h4>
-                    </div>
-
-                </div>
-
-            </div>
+            <lottie-player
+                src="https://assets2.lottiefiles.com/packages/lf20_qp1q7mct.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay>
+            </lottie-player>
 
         </div>
 
     </section>
-
-    <!-- Skills -->
-
-    <section id="skills" class="skills">
-
-        <div class="section-title">
-            <h2>My Skills</h2>
-        </div>
-
-        <div class="skills-grid">
-
-            <div class="skill-box">
-                <i class="fab fa-html5"></i>
-                <h3>HTML5</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fab fa-css3-alt"></i>
-                <h3>CSS3</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fab fa-js"></i>
-                <h3>JavaScript</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fas fa-database"></i>
-                <h3>SQL</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fas fa-code"></i>
-                <h3>C Programming</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Projects -->
-
-    <section id="projects" class="projects">
-
-        <div class="section-title">
-            <h2>Projects</h2>
-        </div>
-
-        <div class="project-container">
-
-            <div class="project-card">
-
-                <h3>FitFusion</h3>
-
-                <p>
-
-                    Fitness web application with authentication,
-                    responsive design, and modern UI.
-
-                </p>
-
-                <a href="#">Live Demo →</a>
-
-            </div>
-
-            <div class="project-card">
-
-                <h3>Portfolio Website</h3>
-
-                <p>
-
-                    Personal portfolio built using HTML, CSS and
-                    JavaScript.
-
-                </p>
-
-                <a href="#">View Project →</a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Contact -->
-
-    <section id="contact" class="contact">
-
-        <div class="section-title">
-            <h2>Contact Me</h2>
-        </div>
-
-        <form>
-
-            <input type="text" placeholder="Your Name">
-
-            <input type="email" placeholder="Your Email">
-
-            <textarea rows="6" placeholder="Write your message"></textarea>
-
-            <button class="btn primary-btn">
-                Send Message
-            </button>
-
-        </form>
-
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-
-            © 2026 Harshit Kumar | All Rights Reserved.
-
-        </p>
-
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
