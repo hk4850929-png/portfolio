@@ -1,140 +1,156 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
 
-    <title>My Portfolio</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
-    <!-- Navbar -->
-<header class="header">
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
     <div class="logo">
-        <h1>Harshit</h1>
+        MyPortfolio
     </div>
 
-    <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
+
 </header>
 
-    <!-- Hero Section -->
+<!-- ================= HERO SECTION ================= -->
 
-    <section id="home" class="hero">
+<section class="hero" id="home">
 
-        <div class="hero-text">
+    <div class="hero-text">
 
-            <h1>Hello, I'm <span>Harshit</span></h1>
+        <h1>Hi, I'm <span>Your Name</span></h1>
 
-            <h3>Frontend Developer</h3>
-
-            <p>
-                I am a BCA student and Frontend Developer.
-                I create responsive and modern websites using HTML, CSS and JavaScript.
-            </p>
-
-            <a href="#contact" class="btn">Contact Me</a>
-
-        </div>
-
-        <div class="hero-image">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
-
-        </div>
-
-    </section>
-
-    <!-- About -->
-
-    <section id="about">
-
-        <h2>About Me</h2>
+        <h3>Frontend Developer</h3>
 
         <p>
-            I enjoy designing beautiful websites and continuously learning new web technologies.
-            My goal is to become a Full Stack Developer.
+            I build responsive and user-friendly websites using
+            HTML, CSS and JavaScript.
         </p>
 
-    </section>
+        <a href="#contact" class="btn">
+            Contact Me
+        </a>
 
-    <!-- Skills -->
+    </div>
 
-    <section id="skills">
+    <div class="hero-image">
 
-        <h2>My Skills</h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+        alt="Developer">
 
-        <div class="skills-container">
+    </div>
 
-            <div class="card">
-                <i class="fa-brands fa-html5"></i>
-                <h3>HTML</h3>
-            </div>
+</section>
 
-            <div class="card">
-                <i class="fa-brands fa-css3-alt"></i>
-                <h3>CSS</h3>
-            </div>
+<!-- ================= ABOUT ================= -->
 
-            <div class="card">
-                <i class="fa-brands fa-js"></i>
-                <h3>JavaScript</h3>
-            </div>
+<section id="about" class="about">
 
-            <div class="card">
-                <i class="fa-brands fa-react"></i>
-                <h3>React</h3>
-            </div>
+    <h2>About Me</h2>
 
+    <p>
+
+        Hello! I'm a passionate Frontend Developer who enjoys creating
+        beautiful and responsive websites. I love learning new
+        technologies and improving my skills every day.
+
+    </p>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skill-box">
+
+        <div class="card">
+            <i class="fa-brands fa-html5"></i>
+            <h3>HTML</h3>
         </div>
 
-    </section>
-
-    <!-- Contact -->
-
-    <section id="contact">
-
-        <h2>Contact Me</h2>
-
-        <p><i class="fa-solid fa-envelope"></i> yourname@gmail.com</p>
-
-        <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
-
-        <div class="social">
-
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
+        <div class="card">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>CSS</h3>
         </div>
 
-    </section>
+        <div class="card">
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+        </div>
 
-    <!-- Footer -->
+        <div class="card">
+            <i class="fa-brands fa-react"></i>
+            <h3>React</h3>
+        </div>
 
-    <footer>
+    </div>
 
-        <p>© 2026 Harshit | All Rights Reserved.</p>
+</section>
 
-    </footer>
+<!-- ================= CONTACT ================= -->
 
-    <script src="script.js"></script>
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+    <form>
+
+        <input
+        type="text"
+        placeholder="Your Name"
+        required>
+
+        <input
+        type="email"
+        placeholder="Your Email"
+        required>
+
+        <textarea
+        rows="5"
+        placeholder="Your Message"></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Your Name | All Rights Reserved
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
