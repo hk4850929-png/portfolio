@@ -1,48 +1,168 @@
-/* ==========================================
-   GOOGLE FONT
-========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* ==========================================
-   RESET
-========================================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* --- STEP 2: APPLY BASIC STYLING --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-html{
-    scroll-behavior:smooth;
-    overflow-x:hidden;
+/* --- STEP 3 & 4: NAVBAR --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#09090f;
-    color:#fff;
-    overflow-x:hidden;
-    line-height:1.6;
+nav .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #333;
 }
 
-/* ==========================================
-   ROOT COLORS
-========================================== */
-
-:root{
-    --primary:#6C63FF;
-    --secondary:#00D4FF;
-    --dark:#09090f;
-    --card:#141420;
-    --text:#ffffff;
-    --light:#bdbdbd;
+nav .nav-links a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-/* ==========================================
-   BACKGROUND
-========================================== */
+nav .nav-links a:hover {
+    color: #6c63ff;
+}
 
-.bg-animation{
-    position:fixed;
-    inset:0;
-    z-index:-
+/* --- STEP 3: HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+/* Prominent Name Styling */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.hero-content h1 span {
+    color: #6c63ff;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    color: #6c63ff;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.hero-content .description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Styled Button from snippet */
+.btn {
+    background: #6c63ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #5247e7;
+}
+
+.hero-image .avatar-placeholder {
+    font-size: 8rem;
+    background: #e2e8f0;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* --- STEP 3 & 4: IMPROVE LAYOUT / SPACING --- */
+.container {
+    max-width: 800px;
+    margin: 60px auto; /* Generous layout spacing between sections */
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.container h2 {
+    color: #222;
+    border-bottom: 2px solid #6c63ff;
+    padding-bottom: 8px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Skills Layout as Clean Tags */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    background: #eef2ff;
+    color: #6c63ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Alignment Helper */
+.text-center {
+    text-align: center;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav .nav-links a {
+        margin: 0 10px;
+    }
+}
