@@ -104,9 +104,11 @@ background:#4c1fe2;
 }
 
 .right img{
-
-width:350px;
-
+    width:350px;
+    height:350px;
+    object-fit:contain;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 section{
