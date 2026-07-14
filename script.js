@@ -1,26 +1,24 @@
-// ===============================
-// Smooth Scrolling
-// ===============================
+// Smooth scrolling for navbar links
 
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
+const links = document.querySelectorAll('.nav-links a');
+
+links.forEach(link => {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
 
-        target.scrollIntoView({
-            behavior: "smooth"
+        targetSection.scrollIntoView({
+            behavior: 'smooth'
         });
     });
 });
 
-
-// ===============================
-// Active Navbar Link
-// ===============================
+// Highlight active navigation link while scrolling
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
+const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
@@ -28,7 +26,7 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 120;
+        const sectionTop = section.offsetTop - 100;
 
         if (pageYOffset >= sectionTop) {
             current = section.getAttribute("id");
@@ -45,22 +43,5 @@ window.addEventListener("scroll", () => {
         }
 
     });
-
-});
-
-
-// ===============================
-// Contact Form Message
-// ===============================
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    alert("Thank you! Your message has been sent successfully.");
-
-    form.reset();
 
 });
