@@ -2,12 +2,20 @@
 // MOBILE MENU
 // ===========================================
 
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("show");
-});
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
+    });
+}
 
 // ===========================================
 // TYPING EFFECT
@@ -33,51 +41,39 @@ function typeEffect() {
 
     if (!deleting) {
 
-        typingText.textContent =
-            currentWord.substring(0, charIndex++);
+        typingText.textContent = currentWord.substring(0, charIndex++);
 
         if (charIndex > currentWord.length) {
-
             deleting = true;
-
             setTimeout(typeEffect, 1200);
-
             return;
         }
 
     } else {
 
-        typingText.textContent =
-            currentWord.substring(0, charIndex--);
+        typingText.textContent = currentWord.substring(0, charIndex--);
 
         if (charIndex < 0) {
-
             deleting = false;
-
             wordIndex++;
 
             if (wordIndex >= words.length) {
-
                 wordIndex = 0;
-
             }
-
         }
-
     }
 
     setTimeout(typeEffect, deleting ? 50 : 120);
-
 }
 
 typeEffect();
 
 // ===========================================
-// ACTIVE NAVBAR LINK
+// ACTIVE NAVIGATION
 // ===========================================
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const links = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
@@ -85,24 +81,23 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
 
-        if (scrollY >= sectionTop) {
+        if (window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight) {
 
             current = section.getAttribute("id");
-
         }
 
     });
 
-    navLinks.forEach(link => {
+    links.forEach(link => {
 
         link.classList.remove("active");
 
         if (link.getAttribute("href") === "#" + current) {
-
             link.classList.add("active");
-
         }
 
     });
@@ -120,7 +115,7 @@ window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
 
         header.style.boxShadow =
-            "0 10px 25px rgba(0,0,0,.35)";
+            "0 10px 30px rgba(0,0,0,.35)";
 
     } else {
 
@@ -135,27 +130,8 @@ window.addEventListener("scroll", () => {
 // ===========================================
 
 const revealItems = document.querySelectorAll(
-    ".hero-text, .hero-image, .about-card, .skill-box, .project-card, .contact form"
+".hero-text,.hero-animation,.about-card,.skill-box,.project-card,.contact form"
 );
-
-function revealOnScroll() {
-
-    revealItems.forEach(item => {
-
-        const top = item.getBoundingClientRect().top;
-
-        const visible = window.innerHeight - 100;
-
-        if (top < visible) {
-
-            item.style.opacity = "1";
-            item.style.transform = "translateY(0)";
-
-        }
-
-    });
-
-}
 
 revealItems.forEach(item => {
 
@@ -165,25 +141,41 @@ revealItems.forEach(item => {
 
 });
 
+function revealOnScroll(){
+
+    revealItems.forEach(item=>{
+
+        const top = item.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+        }
+
+    });
+
+}
+
 window.addEventListener("scroll", revealOnScroll);
 
 revealOnScroll();
 
 // ===========================================
-// BUTTON RIPPLE EFFECT
+// BUTTON HOVER EFFECT
 // ===========================================
 
-document.querySelectorAll(".btn").forEach(button => {
+document.querySelectorAll(".btn").forEach(btn=>{
 
-    button.addEventListener("mouseenter", () => {
+    btn.addEventListener("mouseenter",()=>{
 
-        button.style.transform = "scale(1.05)";
+        btn.style.transform="translateY(-4px)";
 
     });
 
-    button.addEventListener("mouseleave", () => {
+    btn.addEventListener("mouseleave",()=>{
 
-        button.style.transform = "scale(1)";
+        btn.style.transform="translateY(0)";
 
     });
 
@@ -193,5 +185,7 @@ document.querySelectorAll(".btn").forEach(button => {
 // CONSOLE MESSAGE
 // ===========================================
 
-console.log("%cWelcome to Harshit Kumar's Portfolio 🚀",
-"color:#00D4FF;font-size:18px;font-weight:bold;");
+console.log(
+"%cWelcome to Harshit Kumar's Portfolio 🚀",
+"color:#00D4FF;font-size:18px;font-weight:bold;"
+);
