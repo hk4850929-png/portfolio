@@ -3,6 +3,7 @@
 ========================================== */
 
 .contact{
+    padding-top:120px;
     text-align:center;
 }
 
@@ -16,42 +17,30 @@
 
 .contact input,
 .contact textarea{
-
     width:100%;
     padding:18px 20px;
-
     border:none;
     outline:none;
-
     border-radius:15px;
-
     background:#151522;
     color:#fff;
-
     font-size:16px;
-
     transition:.3s;
 }
 
 .contact input:focus,
 .contact textarea:focus{
-
     border:2px solid #00D4FF;
     box-shadow:0 0 20px rgba(0,212,255,.3);
-
 }
 
 .contact textarea{
-
     resize:none;
-
 }
 
 .contact button{
-
     border:none;
     cursor:pointer;
-
 }
 
 /* ==========================================
@@ -59,23 +48,15 @@
 ========================================== */
 
 footer{
-
     background:#07070d;
-
     padding:30px 20px;
-
     text-align:center;
-
     border-top:1px solid rgba(255,255,255,.08);
-
 }
 
 footer p{
-
     color:#bdbdbd;
-
     font-size:15px;
-
 }
 
 /* ==========================================
@@ -83,23 +64,16 @@ footer p{
 ========================================== */
 
 ::-webkit-scrollbar{
-
     width:8px;
-
 }
 
 ::-webkit-scrollbar-track{
-
     background:#09090f;
-
 }
 
 ::-webkit-scrollbar-thumb{
-
     background:linear-gradient(#6C63FF,#00D4FF);
-
     border-radius:20px;
-
 }
 
 /* ==========================================
@@ -108,240 +82,152 @@ footer p{
 
 @media (max-width:991px){
 
-header{
+    header{
+        padding:18px 5%;
+    }
 
-    padding:18px 5%;
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:130px 25px 80px;
+    }
 
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero h3{
+        font-size:24px;
+    }
+
+    .hero-description{
+        max-width:100%;
+    }
+
+    .hero-buttons,
+    .social-icons{
+        justify-content:center;
+    }
+
+    .hero-animation lottie-player{
+        max-width:320px;
+        height:320px;
+    }
+
+    .about-info{
+        grid-template-columns:1fr;
+    }
 }
-
-.hero{
-
-    flex-direction:column-reverse;
-
-    text-align:center;
-
-    padding:140px 30px 80px;
-
-}
-
-.hero h1{
-
-    font-size:50px;
-
-}
-
-.hero h3{
-
-    font-size:24px;
-
-}
-
-.hero-description{
-
-    max-width:100%;
-
-}
-
-.hero-buttons{
-
-    justify-content:center;
-
-}
-
-.social-icons{
-
-    justify-content:center;
-
-}
-
-.hero-animation lottie-player{
-
-    max-width:320px;
-    height:320px;
-
-}
-
-.about-info{
-
-    grid-template-columns:1fr;
-
-}
-
-}
-
-/* ---------------------------- */
 
 @media (max-width:768px){
 
-header{
+    .menu-toggle{
+        display:block;
+    }
 
-    flex-direction:column;
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#11111b;
+        padding:20px 0;
+        text-align:center;
+        gap:20px;
+    }
 
-    padding:15px;
+    .nav-links.active{
+        display:flex;
+    }
 
+    .hero{
+        padding:130px 20px 70px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero h3{
+        font-size:20px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:220px;
+        text-align:center;
+    }
+
+    .hero-animation lottie-player{
+        max-width:260px;
+        height:260px;
+    }
+
+    section{
+        padding:90px 20px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .about-card{
+        padding:25px;
+    }
+
+    .about-info{
+        grid-template-columns:1fr;
+    }
+
+    .skills-grid,
+    .project-container{
+        grid-template-columns:1fr;
+    }
+
+    .contact input,
+    .contact textarea{
+        padding:15px;
+    }
 }
-
-.logo{
-
-    margin-bottom:15px;
-
-}
-
-nav{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:15px;
-
-}
-
-nav a{
-
-    font-size:15px;
-
-}
-
-.hero{
-
-    padding:150px 20px 80px;
-
-}
-
-.hero h1{
-
-    font-size:38px;
-
-}
-
-.hero h3{
-
-    font-size:20px;
-
-}
-
-.hero-description{
-
-    font-size:16px;
-
-}
-
-.hero-buttons{
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-
-.btn{
-
-    width:220px;
-
-    text-align:center;
-
-}
-
-.hero-animation lottie-player{
-
-    max-width:260px;
-    height:260px;
-
-}
-
-section{
-
-    padding:80px 20px;
-
-}
-
-.section-title h2{
-
-    font-size:34px;
-
-}
-
-.about-card{
-
-    padding:25px;
-
-}
-
-.about-card h3{
-
-    font-size:25px;
-
-}
-
-.skills-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.project-container{
-
-    grid-template-columns:1fr;
-
-}
-
-.contact input,
-.contact textarea{
-
-    padding:15px;
-
-}
-
-}
-
-/* ---------------------------- */
 
 @media (max-width:480px){
 
-.logo{
+    .logo{
+        font-size:24px;
+    }
 
-    font-size:24px;
+    .hero h1{
+        font-size:30px;
+    }
 
-}
+    .hero h3{
+        font-size:18px;
+    }
 
-.hero h1{
+    .hero-description{
+        font-size:15px;
+    }
 
-    font-size:30px;
+    .hero-animation lottie-player{
+        max-width:220px;
+        height:220px;
+    }
 
-}
+    .section-title h2{
+        font-size:28px;
+    }
 
-.hero h3{
-
-    font-size:18px;
-
-}
-
-.hero-description{
-
-    font-size:15px;
-
-}
-
-.hero-animation lottie-player{
-
-    max-width:220px;
-    height:220px;
-
-}
-
-.section-title h2{
-
-    font-size:28px;
-
-}
-
-footer p{
-
-    font-size:13px;
-
-}
-
+    footer p{
+        font-size:13px;
+    }
 }
