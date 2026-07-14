@@ -1,124 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Kumar | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
-<header>
+    <!-- Background -->
+    <div class="bg-animation"></div>
 
-<nav>
+    <!-- Header -->
+    <header>
 
-<h2 class="logo">Harshit</h2>
+        <a href="#" class="logo">
+            Harshit<span>.</span>
+        </a>
 
-<ul>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<li><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
 
-</ul>
+    </header>
 
-</nav>
+    <!-- Hero Section -->
 
-</header>
+    <section class="hero" id="home">
 
+        <div class="hero-text">
 
-<section class="hero">
+            <p class="welcome">👋 Welcome to my Portfolio</p>
 
-<div class="left">
+            <h1>Hi, I'm <span>Harshit Kumar</span></h1>
 
-<h1>Hi, I'm Harshit</h1>
+            <h3>
+                <span id="typing"></span>
+            </h3>
 
-<h3>Frontend Developer</h3>
+            <p class="hero-description">
 
-<p>
-I build responsive and user-friendly websites.
-</p>
+                Passionate BCA student focused on creating
+                beautiful, responsive and user-friendly websites
+                using modern web technologies.
 
-<button>Contact Me</button>
+            </p>
 
-</div>
-  
-<div class="right">
-    <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
-     alt="Harshit"
-     class="profile-img">
-</div>
+            <div class="hero-buttons">
 
-</section>
+                <a href="#projects" class="btn primary-btn">
+                    View Projects
+                </a>
 
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
 
-<section id="about">
+            </div>
 
-<h2>About</h2>
+            <div class="social-icons">
 
-<p>
-I am Harshit, a passionate Frontend Developer with a strong interest in building modern and responsive websites. I enjoy learning new technologies and solving real-world problems through web development. I continuously improve my skills by working on projects and exploring the latest trends in web design.
-I create responsive and user-friendly websites using HTML, CSS, JavaScript, React, and modern web technologies.
-I'm a passionate web developer who loves creating beautiful websites using HTML, CSS and JavaScript.
-</p>
+                <a href="#"><i class="fab fa-github"></i></a>
 
-</section>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
 
+                <a href="#"><i class="fab fa-instagram"></i></a>
 
-<section id="skills">
+            </div>
 
-<h2>Skills</h2>
+        </div>
 
-<div class="skills">
+        <div class="hero-image">
 
-<div class="card">
-<i class="fab fa-html5"></i>
-<h3>HTML</h3>
-</div>
+            <div class="circle"></div>
 
-<div class="card">
-<i class="fab fa-css3-alt"></i>
-<h3>CSS</h3>
-</div>
+            <img src="images/profile.png" alt="Harshit Kumar">
 
-<div class="card">
-<i class="fab fa-js"></i>
-<h3>JavaScript</h3>
-</div>
+        </div>
 
-<div class="card">
-<i class="fab fa-react"></i>
-<h3>React</h3>
-</div>
+    </section>
 
-</div>
+    <!-- About -->
 
-</section>
+    <section id="about" class="about">
 
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
 
-<section id="contact">
+        <div class="about-container">
 
-<h2>Contact</h2>
+            <div class="about-card">
 
-<p>Email : Harshit10@gmail.com</p>
+                <h3>Who Am I?</h3>
 
-<p>Phone : +91 9876543210</p>
+                <p>
 
-</section>
+                    I'm Harshit Kumar, a BCA student and Frontend
+                    Developer. I enjoy designing modern websites,
+                    learning new technologies, and building projects
+                    that solve real-world problems.
 
+                </p>
 
-<footer>
+                <div class="about-info">
 
-<p>© 2026 Harshit</p>
+                    <div>
+                        <span>Name</span>
+                        <h4>Harshit Kumar</h4>
+                    </div>
 
-</footer>
+                    <div>
+                        <span>Education</span>
+                        <h4>BCA Student</h4>
+                    </div>
+
+                    <div>
+                        <span>Location</span>
+                        <h4>Ahmedabad, India</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills" class="skills">
+
+        <div class="section-title">
+            <h2>My Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-box">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+            </div>
+
+            <div class="skill-box">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+            </div>
+
+            <div class="skill-box">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill-box">
+                <i class="fas fa-database"></i>
+                <h3>SQL</h3>
+            </div>
+
+            <div class="skill-box">
+                <i class="fas fa-code"></i>
+                <h3>C Programming</h3>
+            </div>
+
+            <div class="skill-box">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects" class="projects">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <h3>FitFusion</h3>
+
+                <p>
+
+                    Fitness web application with authentication,
+                    responsive design, and modern UI.
+
+                </p>
+
+                <a href="#">Live Demo →</a>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+
+                    Personal portfolio built using HTML, CSS and
+                    JavaScript.
+
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-title">
+            <h2>Contact Me</h2>
+        </div>
+
+        <form>
+
+            <input type="text" placeholder="Your Name">
+
+            <input type="email" placeholder="Your Email">
+
+            <textarea rows="6" placeholder="Write your message"></textarea>
+
+            <button class="btn primary-btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Harshit Kumar | All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
