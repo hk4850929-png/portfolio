@@ -85,17 +85,8 @@ nav .nav-links a:hover {
     font-weight: 600;
     font-size: 1rem;
     transition: background 0.3s ease;
-}.hero-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: #eef2ff; /* Light accent background from mockup */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
+
 
 .hero-image img {
     width: 85%;
@@ -110,7 +101,23 @@ nav .nav-links a:hover {
 
 
 .container {
-    max-width: 800px;
+    max-width: 800px;.hero-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #eef2ff; /* Light accent background from mockup */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.hero-image img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
     margin: 60px auto;
     padding: 30px;
     background: #fff;
