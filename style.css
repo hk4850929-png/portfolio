@@ -337,16 +337,11 @@ transform:translateY(-8px);
    HERO IMAGE
 ========================================== */
 
-.hero-image{
-
-flex:1;
-
-display:flex;
-
-justify-content:center;
-
-position:relative;
-
+.hero-image img,
+.hero-animation lottie-player {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
 }
 
 .circle{
