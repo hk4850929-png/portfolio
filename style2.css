@@ -156,9 +156,11 @@ justify-content:center;
 
 }
 
-.hero-image img{
+.hero-image img,
+.hero-animation lottie-player{
 
-width:300px;
+width:230px;
+height:auto;
 
 }
 
@@ -174,13 +176,16 @@ grid-template-columns:1fr;
 
 nav{
 
-display:none;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
 
 }
 
 .menu-btn{
 
-display:block;
+display:none;
 
 }
 
