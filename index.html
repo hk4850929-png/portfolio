@@ -3,58 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio</title>
+    <title>Student Portfolio Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <h2>Portfolio</h2>
-        <ul>
-            <li><a href="#home">Home</a></li>
+    <nav class="navbar">
+        <div class="logo">Harshit</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="text">
-            <h1>Hi, I'm Harshit</h1>
-            <h3>Frontend Developer</h3>
-            <p>I build responsive and user-friendly websites using HTML, CSS and JavaScript.</p>
-            <button>Contact Me</button>
+    <header id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+            <h2>Frontend Developer</h2>
+            <p>I build responsive and user-friendly websites.</p>
+            <a href="#contact" class="btn">Contact Me</a>
         </div>
-
-        <div class="image">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600" alt="Developer Illustration">
         </div>
-    </section>
+    </header>
 
-    <section id="about">
+    <hr class="section-divider">
+
+    <section id="about" class="container about-section">
         <h2>About Me</h2>
-        <p>
-            I am a BCA student passionate about web development.
-            I enjoy creating attractive and responsive websites.
-        </p>
+        <p>I am an aspiring Frontend Developer currently leveling up my skills through a hands-on web development internship. I love turning complex problems into beautiful, pixel-perfect digital experiences using clean and efficient code.</p>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>GitHub</span>
-            <span>Responsive Design</span>
+    <hr class="section-divider">
+
+    <section id="skills" class="container skills-section">
+        <h2>My Skills</h2>
+        <div class="skills-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">Git & GitHub</span>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: Harshit.@gmail.com</p>
-        <p>Phone: +91 9486543265</p>
+    <hr class="section-divider">
+
+    <section id="contact" class="container contact-section">
+        <h2>Contact Me</h2>
+        <p>Want to collaborate or chat about a project? Drop me a line!</p>
+        <div class="contact-details">
+            <p><strong>Email:</strong> Harshit21@gmail.com</p>
+            <p><strong>GitHub:</strong> Https://Harshit21-lgtmgithub./Portfolio</p>
+        </div>
     </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Harshit. Powered by Satic Career Insights.</p>
+    </footer>
 
 </body>
 </html>
