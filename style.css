@@ -1,31 +1,236 @@
-/* --- Mobile Specific Optimization Media Query --- */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column; /* Stacks the Logo and the Links vertically */
-        gap: 15px;              /* Adds clean vertical spacing between logo and links */
-        padding: 15px 2%;
-        text-align: center;
-    }
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-    .logo {
-        font-size: 1.1rem;
-        width: 100%;            /* Forces logo to take full width for centering */
-        display: flex;
-        justify-content: center;
-    }
+/* ==========================================
+   RESET
+========================================== */
 
-    .nav-links {
-        width: 100%;
-        justify-content: center; /* Centers all 3 menu options horizontally under your name */
-        gap: 25px;               /* Ample spacing so "Contact" never runs out of room */
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-    .nav-links a {
-        font-size: 0.85rem;       /* Keeps text crisp and readable */
-    }
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0b1020;
+    color:#fff;
+    overflow-x:hidden;
+}
 
-    /* Extra padding adjustment for the hero section since navbar grew taller vertically */
-    .hero {
-        padding-top: 140px;
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#6c63ff33,transparent 40%),
+    radial-gradient(circle at bottom right,#00d4ff33,transparent 35%);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#0b1020,#111827,#0b1020);
+    z-index:-3;
+}
+
+/* ==========================================
+   CUSTOM CURSOR
+========================================== */
+
+.cursor{
+    position:fixed;
+    width:20px;
+    height:20px;
+    border:2px solid #00d4ff;
+    border-radius:50%;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    transition:.1s;
+    z-index:9999;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 45px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:18px;
+    z-index:999;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:#6c63ff;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#00d4ff;
+    left:0;
+    bottom:-6px;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 8%;
+    gap:60px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h3{
+    font-size:28px;
+    color:#00d4ff;
+    margin-bottom:15px;
+}
+
+.hero-text h1{
+    font-size:68px;
+    margin-bottom:15px;
+}
+
+.hero-text h1 span{
+    color:#6c63ff;
+}
+
+.typing{
+    font-size:36px;
+    color:#00d4ff;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    max-width:600px;
+    line-height:1.8;
+    color:#d8d8d8;
+    margin-bottom:35px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.buttons{
+    display:flex;
+    gap:20px;
+}
+
+.btn,
+.btn2{
+    padding:15px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn{
+    background:#6c63ff;
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 30px #6c63ff80;
+}
+
+.btn2{
+    border:2px solid #00d4ff;
+    color:#00d4ff;
+}
+
+.btn2:hover{
+    background:#00d4ff;
+    color:#000;
+}
+
+/* ==========================================
+   HERO IMAGE
+========================================== */
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:430px;
+    animation:float 4s ease-in-out infinite;
+    filter:drop-shadow(0 20px 35px rgba(0,212,255,.35));
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+    100%{
+        transform:translateY(0);
     }
 }
