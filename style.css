@@ -1,69 +1,31 @@
-/* --- Updated Glowing Navbar (Responsive Fix) --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%; /* Slightly reduced horizontal padding for breathing room */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.logo {
-    font-size: 1.1rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    white-space: nowrap;
-}
-
-.logo span {
-    color: var(--accent-glow);
-    text-shadow: 0 0 10px var(--accent-glow);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px; /* Reduced gap from 30px so links fit on narrow viewports */
-    flex-wrap: wrap; /* Allows items to cleanly wrap if the screen gets exceptionally narrow */
-    justify-content: flex-end;
-}
-
-.nav-links a {
-    text-decoration: none;
-    /* FIX: Made base text brighter (#cbd5e1) instead of deep dark gray so it's readable on mobile */
-    color: #cbd5e1; 
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--accent-glow);
-    text-shadow: 0 0 8px var(--accent-glow);
-}
-
 /* --- Mobile Specific Optimization Media Query --- */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .navbar {
-        padding: 15px 4%;
+        flex-direction: column; /* Stacks the Logo and the Links vertically */
+        gap: 15px;              /* Adds clean vertical spacing between logo and links */
+        padding: 15px 2%;
+        text-align: center;
     }
-    
+
     .logo {
-        font-size: 0.95rem; /* Scales logo down slightly on small phones */
+        font-size: 1.1rem;
+        width: 100%;            /* Forces logo to take full width for centering */
+        display: flex;
+        justify-content: center;
     }
 
     .nav-links {
-        gap: 12px; /* Pulls links tighter together to guarantee visibility */
+        width: 100%;
+        justify-content: center; /* Centers all 3 menu options horizontally under your name */
+        gap: 25px;               /* Ample spacing so "Contact" never runs out of room */
     }
 
     .nav-links a {
-        font-size: 0.75rem;
+        font-size: 0.85rem;       /* Keeps text crisp and readable */
+    }
+
+    /* Extra padding adjustment for the hero section since navbar grew taller vertically */
+    .hero {
+        padding-top: 140px;
     }
 }
