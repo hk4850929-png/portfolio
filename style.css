@@ -928,5 +928,218 @@ section{
 .about-image img{
     max-width:280px;
 }
+/* ================================
+   SMOOTH SCROLL
+================================ */
 
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+nav ul li a{
+    position:relative;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#6C63FF;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#6C63FF;
+    transition:.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.btn{
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(108,99,255,.4);
+}
+
+/* ================================
+   HOME IMAGE
+================================ */
+
+.profile-img{
+    transition:.5s;
+    animation:float 4s ease-in-out infinite;
+}
+
+.profile-img:hover{
+    transform:scale(1.05);
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.project-card,
+.skill-card,
+.service-card{
+
+    transition:.4s;
+}
+
+.project-card:hover,
+.skill-card:hover,
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+}
+
+/* ================================
+   ICONS
+================================ */
+
+.social-icons a{
+
+    transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+    transform:rotate(360deg) scale(1.2);
+
+    color:#6C63FF;
+
+}
+
+/* ================================
+   INPUT BOX
+================================ */
+
+input,
+textarea{
+
+transition:.3s;
+
+}
+
+input:focus,
+textarea:focus{
+
+border:2px solid #6C63FF;
+
+box-shadow:0 0 10px rgba(108,99,255,.4);
+
+outline:none;
+
+}
+
+/* ================================
+   SECTION ANIMATION
+================================ */
+
+section{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ================================
+   PROJECT IMAGE
+================================ */
+
+.project-card img{
+
+transition:.4s;
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#6C63FF;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#483DFF;
+
+}
 }
