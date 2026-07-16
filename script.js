@@ -1,127 +1,255 @@
-// --- 1. DYNAMIC CANVAS PIXELS / AI ANIMATION ENGINE ---
-const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
+// ===========================================
+// MOBILE MENU
+// ===========================================
 
-let particlesArray = [];
-const numberOfParticles = 60;
-const mouse = { x: null, y: null, radius: 150 };
+const menuBtn = document.querySelector(".menu");
+const nav = document.querySelector("nav");
 
-// Auto resizing windows
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-// Tracking mouse coordinate position
-window.addEventListener('mousemove', (event) => {
-    mouse.x = event.clientX;
-    mouse.y = event.clientY;
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
 });
 
-// Particle Object Blueprint
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+// ===========================================
+// CLOSE MENU WHEN LINK IS CLICKED
+// ===========================================
 
-        // Keep inside window bounds bounds
-        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
 
-        // Interactive mouse connection magnetism logic
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < mouse.radius) {
-            if (mouse.x < this.x && this.x < canvas.width - 10) this.x += 2;
-            if (mouse.x > this.x && this.x > 10) this.x -= 2;
-            if (mouse.y < this.y && this.y < canvas.height - 10) this.y += 2;
-            if (mouse.y > this.y && this.y > 10) this.y -= 2;
+// ===========================================
+// ACTIVE NAVIGATION
+// ===========================================
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
         }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+// ===========================================
+// CUSTOM CURSOR
+// ===========================================
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+
+});
+
+// ===========================================
+// SCROLL TO TOP BUTTON
+// ===========================================
+
+const topBtn = document.createElement("button");
+
+topBtn.innerHTML = "↑";
+
+topBtn.className = "top-btn";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        topBtn.classList.add("show");
+
+    } else {
+
+        topBtn.classList.remove("show");
+
     }
-    draw() {
-        ctx.fillStyle = 'rgba(0, 240, 255, 0.6)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+        behavior: "smooth"
+
+    });
+
+});
+
+// ===========================================
+// REVEAL ANIMATION
+// ===========================================
+
+const reveals = document.querySelectorAll(
+".about-container,.skills-container,.projects-grid,.contact-container"
+);
+
+function revealSection(){
+
+    reveals.forEach(item=>{
+
+        const top=item.getBoundingClientRect().top;
+
+        const visible=window.innerHeight-120;
+
+        if(top<visible){
+
+            item.classList.add("show");
+
+        }
+
+    });
+
 }
 
-function initParticles() {
-    particlesArray = [];
-    for (let i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle());
-    }
-}
+window.addEventListener("scroll",revealSection);
 
-// Draw interconnective web vector lines
-function connectParticles() {
-    for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-            let dx = particlesArray[a].x - particlesArray[b].x;
-            let dy = particlesArray[a].y - particlesArray[b].y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
+revealSection();
 
-            if (distance < 120) {
-                let opacity = (1 - (distance / 120)) * 0.15;
-                ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
+// ===========================================
+// HERO TYPING EFFECT
+// ===========================================
+
+const typing = document.querySelector(".typing");
+
+const words = [
+
+"Frontend Developer",
+
+"Web Designer",
+
+"JavaScript Developer",
+
+"React Learner"
+
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const current = words[wordIndex];
+
+    if(!deleting){
+
+        typing.textContent = current.substring(0,charIndex);
+
+        charIndex++;
+
+        if(charIndex > current.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1200);
+
+            return;
+
+        }
+
+    }else{
+
+        typing.textContent = current.substring(0,charIndex);
+
+        charIndex--;
+
+        if(charIndex < 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex >= words.length){
+
+                wordIndex = 0;
+
             }
+
         }
+
     }
+
+    setTimeout(typeEffect,deleting?60:120);
+
 }
 
-function animateBackground() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
+typeEffect();
+
+// ===========================================
+// HEADER BACKGROUND ON SCROLL
+// ===========================================
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>80){
+
+        header.style.background="rgba(8,12,24,.95)";
+
+    }else{
+
+        header.style.background="rgba(255,255,255,.08)";
+
     }
-    connectParticles();
-    requestAnimationFrame(animateBackground);
-}
 
-initParticles();
-animateBackground();
-
-
-// --- 2. GSAP INTERACTION ANCHORS & TEXT BOOT SEQUENCES ---
-window.addEventListener('DOMContentLoaded', () => {
-    // Elegant fade-in layout sequences 
-    gsap.from('.navbar', { y: -50, opacity: 0, duration: 1, ease: 'power3.out' });
-    gsap.from('.ai-badge', { scale: 0.8, opacity: 0, duration: 1, delay: 0.3, ease: 'back.out(2)' });
-    gsap.from('.hero h1, .subtitle, .description, .hero .btn', {
-        y: 30,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: 'power2.out',
-        delay: 0.5
-    });
 });
 
+// ===========================================
+// PROJECT CARD HOVER EFFECT
+// ===========================================
 
-// --- 3. PROJECT CARD GLOW REFRACTION TRACKER ---
-const cards = document.querySelectorAll('.project-card');
-cards.forEach(card => {
-    const glow = card.querySelector('.card-glow');
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - 150; // Offset half glow element width
-        const y = e.clientY - rect.top - 150;
-        glow.style.transform = `translate(${x}px, ${y}px)`;
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect=card.getBoundingClientRect();
+
+        const x=e.clientX-rect.left;
+
+        const y=e.clientY-rect.top;
+
+        card.style.transform=
+        `perspective(1000px)
+        rotateX(${-(y-rect.height/2)/25}deg)
+        rotateY(${(x-rect.width/2)/25}deg)
+        scale(1.03)`;
+
     });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="perspective(1000px) rotateX(0) rotateY(0)";
+
+    });
+
 });
