@@ -1,248 +1,165 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-scroll-behavior:smooth;
+/* ==========================================
+   STEP 5: FIX SPACING, ALIGNMENT & RESET
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-background:#f5f7fb;
-color:#222;
+/* STEP 2: SMOOTH SCROLL (CSS Native Approach) */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header */
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-background:#4f46e5;
-position:sticky;
-top:0;
-z-index:100;
+body {
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#fff;
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-weight:600;
+.dummy-section {
+    min-height: 60vh;
+    border-top: 1px solid #eee;
 }
 
-nav a:hover{
-color:#ffd700;
-}
-
-/* Home */
-
-.home{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:80px 10%;
-flex-wrap:wrap;
-}
-
-.home-text{
-max-width:550px;
-}
-
-.home-text h1{
-font-size:55px;
-}
-
-.home-text span{
-color:#4f46e5;
-}
-
-.home-text h3{
-margin:15px 0;
-color:#555;
-}
-
-.home-text p{
-line-height:1.7;
-margin-bottom:25px;
-}
-
-/* Home Image */
-
-.home-img{
-    flex: 1;
+/* ==========================================
+   NAVBAR STYLING & HOVER EFFECTS (Step 1)
+   ========================================== */
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.profile-img{
-    width:420px;
-    max-width:100%;
-    border-radius:20px;
-    animation: float 4s ease-in-out infinite;
-    transition:0.3s;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
-.profile-img:hover{
-    transform: scale(1.05);
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    /* Step 4: Smooth transition for color changes */
+    transition: color 0.3s ease;
 }
 
-/* Floating Animation */
-
-@keyframes float{
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-15px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+/* Step 1: Navbar link hover */
+.nav-links a:hover {
+    color: #a78bfa; /* Matches the graphic's code sample */
 }
 
-/* Button */
-
-.btn{
-display:inline-block;
-background:#4f46e5;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:8px;
-transition:.3s;
+/* ==========================================
+   HERO / BUTTONS (Step 1 & Step 3)
+   ========================================== */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
 }
 
-.btn:hover{
-background:#3128b3;
+.btn {
+    background-color: #6366f1;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    /* Step 3 & 4: Pointer cursor and transition setup */
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Sections */
-
-section{
-padding:80px 10%;
+/* Step 1 & 3: Button Hover state feedback */
+.btn:hover {
+    background-color: #7c3aed; /* Slight shift to purple */
+    transform: translateY(-2px); /* Lifts up slightly */
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
 }
 
-h2{
-text-align:center;
-margin-bottom:40px;
-font-size:38px;
+/* ==========================================
+   PROJECTS & CARDS (Step 1 & Step 4)
+   ========================================== */
+.projects-section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
-/* About */
-
-.about-box{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-margin-top:40px;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 10px;
 }
 
-.about-box div{
-background:white;
-padding:25px;
-width:250px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-text-align:center;
+.project-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Step 4: Subtle transition for card hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
 
-/* Skills */
-
-.skills{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
+/* Step 1 & 4: Card Hover Effects (Matches Image spec exactly) */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.skills span{
-background:#4f46e5;
-color:white;
-padding:12px 20px;
-border-radius:25px;
-font-weight:bold;
+.project-img {
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.skills span:hover{
-transform:scale(1.1);
-transition:.3s;
+/* Colors matching the expected outcome image */
+.placeholder-1 { background-color: #e0d7ff; }
+.placeholder-2 { background-color: #d1f7c4; }
+.placeholder-3 { background-color: #ffeab6; }
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #1f2937;
 }
 
-/* Projects */
-
-.project-container{
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
+.project-card p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 15px;
 }
 
-.card{
-background:white;
-width:320px;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-text-align:center;
-transition:.4s;
+.btn-secondary {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h3{
-margin-bottom:15px;
-}
-
-/* Contact */
-
-#contact{
-text-align:center;
-}
-
-#contact p{
-margin:15px;
-font-size:18px;
-}
-
-/* Footer */
-
-footer{
-background:#4f46e5;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-}
-
-nav{
-margin-top:15px;
-}
-
-.home{
-text-align:center;
-}
-
-.home-img img{
-margin-top:40px;
-width:280px;
-}
-
+.btn-secondary:hover {
+    background: #3730a3;
 }
