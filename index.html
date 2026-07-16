@@ -1,229 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harshit | Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Header -->
-
-<header>
-
-<div class="logo">Harshit</div>
-
-<nav>
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#skills">Skills</a>
-
-<a href="#projects">Projects</a>
-
-<a href="#contact">Contact</a>
-
-</nav>
-
-</header>
-
-<!-- Home -->
-
-<section id="home" class="home">
-
-<div class="home-text">
-
-<h1>Hi, I'm <span>Harshit</span></h1>
-
-<h3>Frontend Developer</h3>
-
-<p>
-I build responsive and user-friendly websites using HTML,
-CSS and JavaScript.
-</p>
-
-<a href="#contact" class="btn">Contact Me</a>
-
-</div>
-
-<div class="home-img">
-    <img
-        src="https://avatars.githubusercontent.com/u/583231?v=4"
-        alt="Developer"
-        class="profile-img">
-</div>
-
-</section>
-
-<!-- About -->
-
-<section id="about">
-
-<h2>About Me</h2>
-
-<p>
-
-Hello! I'm <b>Harshit</b>, a passionate Frontend Developer
-who enjoys designing beautiful and responsive websites.
-I continuously learn new technologies and love solving
-real-world problems through coding.
-
-</p>
-
-<div class="about-box">
-
-<div>
-
-<h3>Education</h3>
-
-<p>BCA Student</p>
-
-</div>
-
-<div>
-
-<h3>Experience</h3>
-
-<p>Frontend Development</p>
-
-</div>
-
-<div>
-
-<h3>Location</h3>
-
-<p>India</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Skills -->
-
-<section id="skills">
-
-<h2>My Skills</h2>
-
-<div class="skills">
-
-<span>HTML5</span>
-
-<span>CSS3</span>
-
-<span>JavaScript</span>
-
-<span>React</span>
-
-<span>Bootstrap</span>
-
-<span>Git</span>
-
-<span>GitHub</span>
-
-<span>Supabase</span>
-
-<span>VS Code</span>
-
-<span>Responsive Design</span>
-
-</div>
-
-</section>
-
-<!-- Projects -->
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="project-container">
-
-<div class="card">
-
-<h3>FitFusion BMI Calculator</h3>
-
-<p>
-
-BMI Calculator website using React,
-Vite and Supabase with diet,
-exercise and water intake recommendations.
-
-</p>
-
-<a href="#" class="btn">View Project</a>
-
-</div>
-
-<div class="card">
-
-<h3>Portfolio Website</h3>
-
-<p>
-
-Responsive personal portfolio website
-created using HTML, CSS and JavaScript.
-
-</p>
-
-<a href="#" class="btn">View Project</a>
-
-</div>
-
-<div class="card">
-
-<h3>Student Management System</h3>
-
-<p>
-
-Simple CRUD application for managing
-student records.
-
-</p>
-
-<a href="#" class="btn">View Project</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section id="contact">
-
-<h2>Contact Me</h2>
-
-<p><i class="fa-solid fa-envelope"></i> harshit@email.com</p>
-
-<p><i class="fa-solid fa-phone"></i> +91 XXXXX XXXXX</p>
-
-<p><i class="fa-solid fa-location-dot"></i> India</p>
-
-<a href="#" class="btn">Download Resume</a>
-
-</section>
-
-<footer>
-
-<p>© 2026 Harshit | All Rights Reserved.</p>
-
-</footer>
-
-<script src="script.js"></script>
+    <nav class="navbar">
+        <div class="logo">Harshit</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Harshit</span></h1>
+            <p>Frontend Developer</p>
+            <p>I build responsive and user-friendly websites.</p>
+            <button class="btn">Contact Me</button>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img placeholder-1"></div>
+                <h3>Project One</h3>
+                <p>Short description of the project.</p>
+                <button class="btn-secondary">View Project</button>
+            </div>
+            <div class="project-card">
+                <div class="project-img placeholder-2"></div>
+                <h3>Project Two</h3>
+                <p>Short description of the project.</p>
+                <button class="btn-secondary">View Project</button>
+            </div>
+            <div class="project-card">
+                <div class="project-img placeholder-3"></div>
+                <h3>Project Three</h3>
+                <p>Short description of the project.</p>
+                <button class="btn-secondary">View Project</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="dummy-section"><h2>About Me</h2><p>Content goes here...</p></section>
+    <section id="skills" class="dummy-section"><h2>Skills</h2><p>Content goes here...</p></section>
+    <section id="contact" class="dummy-section"><h2>Contact</h2><p>Content goes here...</p></section>
 
 </body>
 </html>
