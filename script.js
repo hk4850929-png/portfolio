@@ -1,4 +1,4 @@
-  // --- 1. DYNAMIC CANVAS PIXELS / AI ANIMATION ENGINE ---
+// --- 1. DYNAMIC CANVAS PIXELS / AI ANIMATION ENGINE ---
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 
