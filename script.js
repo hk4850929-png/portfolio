@@ -2,20 +2,22 @@
 // MOBILE MENU
 // ===========================================
 
-const menuBtn = document.querySelector(".menu");
+const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
 
-menuBtn.addEventListener("click", () => {
+menu.addEventListener("click", () => {
     nav.classList.toggle("active");
+
+    menu.innerHTML = nav.classList.contains("active")
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
 });
 
-// ===========================================
-// CLOSE MENU WHEN LINK IS CLICKED
-// ===========================================
-
+// Close menu after clicking a link
 document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", () => {
         nav.classList.remove("active");
+        menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
     });
 });
 
@@ -32,9 +34,9 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 120;
+        const top = section.offsetTop - 150;
 
-        if (scrollY >= sectionTop) {
+        if (window.scrollY >= top) {
             current = section.getAttribute("id");
         }
 
@@ -58,96 +60,29 @@ window.addEventListener("scroll", () => {
 
 const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", e => {
 
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
 
 });
 
-// ===========================================
-// SCROLL TO TOP BUTTON
-// ===========================================
-
-const topBtn = document.createElement("button");
-
-topBtn.innerHTML = "↑";
-
-topBtn.className = "top-btn";
-
-document.body.appendChild(topBtn);
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-
-        topBtn.classList.add("show");
-
-    } else {
-
-        topBtn.classList.remove("show");
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-        behavior: "smooth"
-
-    });
-
-});
-
-// ===========================================
-// REVEAL ANIMATION
-// ===========================================
-
-const reveals = document.querySelectorAll(
-".about-container,.skills-container,.projects-grid,.contact-container"
-);
-
-function revealSection(){
-
-    reveals.forEach(item=>{
-
-        const top=item.getBoundingClientRect().top;
-
-        const visible=window.innerHeight-120;
-
-        if(top<visible){
-
-            item.classList.add("show");
-
-        }
-
-    });
-
+// Hide cursor on mobile
+if(window.innerWidth < 768){
+    cursor.style.display = "none";
 }
 
-window.addEventListener("scroll",revealSection);
-
-revealSection();
-
 // ===========================================
-// HERO TYPING EFFECT
+// TYPING EFFECT
 // ===========================================
 
 const typing = document.querySelector(".typing");
 
 const words = [
-
-"Frontend Developer",
-
-"Web Designer",
-
-"JavaScript Developer",
-
-"React Learner"
-
+    "Frontend Developer",
+    "Web Designer",
+    "React Learner",
+    "JavaScript Developer"
 ];
 
 let wordIndex = 0;
@@ -156,29 +91,26 @@ let deleting = false;
 
 function typeEffect(){
 
-    const current = words[wordIndex];
+    const currentWord = words[wordIndex];
 
     if(!deleting){
 
-        typing.textContent = current.substring(0,charIndex);
+        typing.textContent =
+        currentWord.substring(0,charIndex++);
 
-        charIndex++;
-
-        if(charIndex > current.length){
+        if(charIndex > currentWord.length){
 
             deleting = true;
 
             setTimeout(typeEffect,1200);
 
             return;
-
         }
 
     }else{
 
-        typing.textContent = current.substring(0,charIndex);
-
-        charIndex--;
+        typing.textContent =
+        currentWord.substring(0,charIndex--);
 
         if(charIndex < 0){
 
@@ -196,23 +128,24 @@ function typeEffect(){
 
     }
 
-    setTimeout(typeEffect,deleting?60:120);
+    setTimeout(typeEffect,deleting ? 60 : 120);
 
 }
 
 typeEffect();
 
 // ===========================================
-// HEADER BACKGROUND ON SCROLL
+// HEADER EFFECT
 // ===========================================
 
 const header = document.querySelector("header");
 
 window.addEventListener("scroll",()=>{
 
-    if(window.scrollY>80){
+    if(window.scrollY > 80){
 
         header.style.background="rgba(8,12,24,.95)";
+        header.style.backdropFilter="blur(18px)";
 
     }else{
 
@@ -223,10 +156,75 @@ window.addEventListener("scroll",()=>{
 });
 
 // ===========================================
-// PROJECT CARD HOVER EFFECT
+// SCROLL TO TOP BUTTON
 // ===========================================
 
-const cards = document.querySelectorAll(".project-card");
+const topBtn = document.createElement("button");
+
+topBtn.className="top-btn";
+
+topBtn.innerHTML='<i class="fa-solid fa-arrow-up"></i>';
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 400){
+
+        topBtn.classList.add("show");
+
+    }else{
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+});
+
+// ===========================================
+// REVEAL ANIMATION
+// ===========================================
+
+const revealItems = document.querySelectorAll(
+".about-container,.skills-container,.projects-grid,.contact-container"
+);
+
+function reveal(){
+
+    revealItems.forEach(item=>{
+
+        const top=item.getBoundingClientRect().top;
+
+        if(top < window.innerHeight-120){
+
+            item.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+// ===========================================
+// PROJECT CARD EFFECT
+// ===========================================
+
+const cards=document.querySelectorAll(".project-card");
 
 cards.forEach(card=>{
 
@@ -238,17 +236,18 @@ cards.forEach(card=>{
 
         const y=e.clientY-rect.top;
 
-        card.style.transform=
-        `perspective(1000px)
-        rotateX(${-(y-rect.height/2)/25}deg)
-        rotateY(${(x-rect.width/2)/25}deg)
-        scale(1.03)`;
+        card.style.transform=`
+        perspective(1000px)
+        rotateX(${-(y-rect.height/2)/30}deg)
+        rotateY(${(x-rect.width/2)/30}deg)
+        scale(1.03)
+        `;
 
     });
 
     card.addEventListener("mouseleave",()=>{
 
-        card.style.transform="perspective(1000px) rotateX(0) rotateY(0)";
+        card.style.transform="perspective(1000px) rotateX(0) rotateY(0) scale(1)";
 
     });
 
