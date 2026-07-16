@@ -5,15 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Portfolio | Frontend Internship</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 </head>
 <body>
 
-    <div class="ai-bg" id="aiBg"></div>
+    <canvas id="particleCanvas"></canvas>
 
     <nav class="navbar">
-        <div class="logo">AI://Harshit</div>
+        <div class="logo">SYSTEM://<span>NAME</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projectshttp://googleusercontent.com/image_generation_content/0
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="ai-badge">AI CORE ACTIVE</div>
+            <h1>Hi, I'm <span class="glow-text">Your Name</span></h1>
+            <p class="subtitle">Frontend Developer & Interface Designer</p>
+            <p class="description">Building highly responsive, intelligent, and interactive web experiences.</p>
+            <a href="#projects" class="btn btn-primary">Initialize Projects</a>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">Project Repositories</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="tech-tag">HTML / CSS / JS</div>
+                    <h3>Neural UI Dashboard</h3>
+                    <p>An interactive data visualization board featuring ultra-smooth animations and glassmorphism styling.</p>
+                    <button class="btn btn-card">View Project</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="tech-tag">GSAP / CANVAS</div>
+                    <h3>Quantum Portfolio</h3>
+                    <p>A dark cybernetic themed single-page web environment utilizing canvas physics and mouse tracking particles.</p>
+                    <button class="btn btn-card">View Project</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="tech-tag">RESPONSIVE</div>
+                    <h3>Synthetix Landing Page</h3>
+                    <p>A highly optimized, clean landing page structure focusing on accessibility, alignment, and semantic HTML layout.</p>
+                    <button class="btn btn-card">View Project</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Terminal Connection</h2>
+        <p>Let's build something futuristic together.</p>
+        <button class="btn btn-primary">Send Secure Signal</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
