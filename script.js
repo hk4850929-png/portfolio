@@ -1,6 +1,6 @@
-// ==============================
-// HAMBURGER MENU
-// ==============================
+// ===========================================
+// MOBILE MENU
+// ===========================================
 
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
@@ -8,31 +8,30 @@ const nav = document.querySelector("nav");
 menu.addEventListener("click", () => {
     nav.classList.toggle("active");
 
-    if (nav.classList.contains("active")) {
-        menu.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    } else {
-        menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
+    menu.innerHTML = nav.classList.contains("active")
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
 });
 
-// ==============================
-// CLOSE MENU AFTER CLICK
-// ==============================
+// ===========================================
+// CLOSE MENU AFTER CLICKING A LINK
+// ===========================================
 
 document.querySelectorAll("nav a").forEach(link => {
 
     link.addEventListener("click", () => {
 
         nav.classList.remove("active");
+
         menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
 
     });
 
 });
 
-// ==============================
-// ACTIVE NAVBAR LINK
-// ==============================
+// ===========================================
+// ACTIVE NAVIGATION
+// ===========================================
 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
@@ -45,8 +44,10 @@ window.addEventListener("scroll", () => {
 
         const sectionTop = section.offsetTop - 150;
 
-        if (pageYOffset >= sectionTop) {
+        if (window.scrollY >= sectionTop) {
+
             current = section.getAttribute("id");
+
         }
 
     });
@@ -56,51 +57,31 @@ window.addEventListener("scroll", () => {
         link.classList.remove("active");
 
         if (link.getAttribute("href") === "#" + current) {
+
             link.classList.add("active");
+
         }
 
     });
 
 });
 
-// ==============================
-// SCROLL ANIMATION
-// ==============================
-
-const revealElements = document.querySelectorAll(
-    ".about-container,.education-card,.skill-card,.project-card,.certificate-card,.contact-container"
-);
-
-function reveal() {
-
-    revealElements.forEach(el => {
-
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (top < windowHeight - 100) {
-            el.classList.add("show");
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
-
-// ==============================
+// ===========================================
 // SCROLL TO TOP BUTTON
-// ==============================
+// ===========================================
 
 const topBtn = document.querySelector(".top-btn");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 300) {
+    if (window.scrollY > 400) {
+
         topBtn.classList.add("show");
+
     } else {
+
         topBtn.classList.remove("show");
+
     }
 
 });
@@ -108,30 +89,39 @@ window.addEventListener("scroll", () => {
 topBtn.addEventListener("click", () => {
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 });
 
-// ==============================
-// SMOOTH SCROLL
-// ==============================
+// ===========================================
+// SCROLL ANIMATION
+// ===========================================
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const observer = new IntersectionObserver((entries) => {
 
-    anchor.addEventListener("click", function (e) {
+    entries.forEach(entry => {
 
-        e.preventDefault();
+        if (entry.isIntersecting) {
 
-        const target = document.querySelector(this.getAttribute("href"));
+            entry.target.classList.add("show");
 
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
         }
 
     });
+
+}, {
+
+    threshold: 0.2
+
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    observer.observe(section);
 
 });
