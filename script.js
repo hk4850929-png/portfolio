@@ -212,3 +212,18 @@ window.addEventListener("load",()=>{
 
 
 console.log("Portfolio Loaded Successfully 🚀");
+
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("nav");
+
+menu.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+menu.innerHTML=nav.classList.contains("active")
+
+? '<i class="fa-solid fa-xmark"></i>'
+
+: '<i class="fa-solid fa-bars"></i>';
+
+});
