@@ -1,37 +1,38 @@
-// ===========================================
+// ===============================
 // MOBILE MENU
-// ===========================================
+// ===============================
 
-const menu = document.querySelector(".menu");
+const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector("nav");
 
-menu.addEventListener("click", () => {
+menuBtn.addEventListener("click", () => {
     nav.classList.toggle("active");
 
-    menu.innerHTML = nav.classList.contains("active")
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+    if (nav.classList.contains("active")) {
+        menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
 });
 
-// ===========================================
-// CLOSE MENU AFTER CLICKING A LINK
-// ===========================================
+// ===============================
+// CLOSE MENU AFTER CLICK
+// ===============================
 
 document.querySelectorAll("nav a").forEach(link => {
 
     link.addEventListener("click", () => {
 
         nav.classList.remove("active");
-
-        menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
 
     });
 
 });
 
-// ===========================================
+// ===============================
 // ACTIVE NAVIGATION
-// ===========================================
+// ===============================
 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
@@ -43,11 +44,10 @@ window.addEventListener("scroll", () => {
     sections.forEach(section => {
 
         const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.clientHeight;
 
-        if (window.scrollY >= sectionTop) {
-
+        if (pageYOffset >= sectionTop) {
             current = section.getAttribute("id");
-
         }
 
     });
@@ -57,8 +57,50 @@ window.addEventListener("scroll", () => {
         link.classList.remove("active");
 
         if (link.getAttribute("href") === "#" + current) {
-
             link.classList.add("active");
+        }
+
+    });
+
+});
+
+// ===============================
+// HEADER SHADOW
+// ===============================
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.3)";
+
+    } else {
+
+        header.style.boxShadow = "none";
+
+    }
+
+});
+
+// ===============================
+// SMOOTH SCROLL
+// ===============================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
 
         }
 
@@ -66,41 +108,11 @@ window.addEventListener("scroll", () => {
 
 });
 
-// ===========================================
-// SCROLL TO TOP BUTTON
-// ===========================================
-
-const topBtn = document.querySelector(".top-btn");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 400) {
-
-        topBtn.classList.add("show");
-
-    } else {
-
-        topBtn.classList.remove("show");
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-// ===========================================
+// ===============================
 // SCROLL ANIMATION
-// ===========================================
+// ===============================
+
+const cards = document.querySelectorAll(".card, .project-card");
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -108,20 +120,23 @@ const observer = new IntersectionObserver((entries) => {
 
         if (entry.isIntersecting) {
 
-            entry.target.classList.add("show");
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
 
         }
 
     });
 
 }, {
-
     threshold: 0.2
-
 });
 
-document.querySelectorAll("section").forEach(section => {
+cards.forEach(card => {
 
-    observer.observe(section);
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = ".6s";
+
+    observer.observe(card);
 
 });
