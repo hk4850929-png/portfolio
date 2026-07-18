@@ -4,237 +4,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshit | Frontend Developer</title>
+    <title>Lalita Makwana | Portfolio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <!-- Google Fonts: Inter for body, Outfit for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Link to our external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
 
-    <!-- ================= NAVBAR ================= -->
-
-    <header>
-
-        <div class="logo">
-            Harshit
-        </div>
-
-        <nav id="navbar">
-
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-
+    <!-- Navigation Bar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo"><span class="logo-code">&lt;LM /&gt;</span> Lalita.</div>
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-
-        <div class="menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
     </header>
 
-    <!-- ================= HERO ================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-text">
-
-            <h4>Hello 👋</h4>
-
-            <h1>
-                Hi, I'm <span>Harshit</span>
-            </h1>
-
-            <h3>Frontend Developer</h3>
-
-            <p>
-                I build modern, responsive and attractive websites
-                using HTML, CSS and JavaScript.
-            </p>
-
-            <div class="hero-btn">
-
-                <a href="#contact" class="btn">
-                    Contact Me
-                </a>
-
-                <a href="#projects" class="btn2">
-                    View Projects
-                </a>
-
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span> Available for work
+                </div>
+                <h1 class="hero-title">Creative <span class="highlight">Frontend Developer</span></h1>
+                <p class="hero-subtitle">Hi, I'm Lalita Makwana. I build premium, responsive web experiences with modern
+                    design and flawless interactions.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
             </div>
-
+            <div class="hero-visual">
+                <div class="visual-glow"></div>
+                <div class="visual-wrapper">
+                    <img src="images/image.png" alt="Developer Illustration" class="dev-img">
+                </div>
+                <div class="floating-card location-card">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Ahmedabad, India</span>
+                </div>
+            </div>
         </div>
-
-        <div class="hero-image">
-
-            <img src="images/boy.png" alt="Developer">
-
-        </div>
-
     </section>
 
-    <!-- ================= ABOUT ================= -->
-
-    <section class="about" id="about">
-
-        <div class="section-title">
-
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <span class="sub-heading">Discover</span>
             <h2>About Me</h2>
-
-            <p>
-                I'm a passionate Frontend Developer and BCA student.
-                I love creating beautiful websites with clean UI and
-                smooth user experience.
-            </p>
-
         </div>
+        <div class="about-container">
+            <div class="stylish-card">
+                <div class="card-glow"></div>
+                <h3>My Journey</h3>
+                <p>I am a <span class="highlight-text">BCA student</span> deeply passionate about <span
+                        class="highlight-text">Frontend Development</span>. My focus is on writing clean, semantic code
+                    to build responsive and accessible web applications.</p>
+                <p>By blending creative design with logical <span class="highlight-text">Problem Solving</span>, I aim
+                    to create digital experiences that are not only beautiful but also highly functional. I am
+                    continuously learning and experimenting with new web technologies.</p>
+            </div>
 
+            <div class="quick-facts-card stylish-card">
+                <h3>Quick Facts</h3>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                        <div class="fact-text">
+                            <span class="fact-title">Education</span>
+                            <span class="fact-desc">BCA (Semester 3)</span>
+                        </div>
+                    </div>
+                    <div class="fact-item">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <div class="fact-text">
+                            <span class="fact-title">Location</span>
+                            <span class="fact-desc">Ahmedabad, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ================= SKILLS ================= -->
-
-    <section class="skills" id="skills">
-
-        <div class="section-title">
-            <h2>Skills</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-header center">
+            <span class="sub-heading">Expertise</span>
+            <h2>My Skills</h2>
         </div>
-
-        <div class="skill-container">
-
-            <div class="card">
-                <i class="fa-brands fa-html5"></i>
-                <h3>HTML</h3>
+        <div class="skills-grid">
+            <!-- HTML -->
+            <div class="skill-item">
+                <div class="skill-icon">
+                    <svg viewBox="0 0 384 512" fill="currentColor">
+                        <path
+                            d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
+                    </svg>
+                </div>
+                <h3>HTML5</h3>
+                <p>Semantic structure</p>
             </div>
-
-            <div class="card">
-                <i class="fa-brands fa-css3-alt"></i>
-                <h3>CSS</h3>
+            <!-- CSS -->
+            <div class="skill-item">
+                <div class="skill-icon">
+                    <svg viewBox="0 0 384 512" fill="currentColor">
+                        <path
+                            d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2.1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z" />
+                    </svg>
+                </div>
+                <h3>CSS3</h3>
+                <p>Modern styling & layouts</p>
             </div>
-
-            <div class="card">
-                <i class="fa-brands fa-js"></i>
+            <!-- JS -->
+            <div class="skill-item">
+                <div class="skill-icon">
+                    <svg viewBox="0 0 448 512" fill="currentColor">
+                        <path
+                            d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z" />
+                    </svg>
+                </div>
                 <h3>JavaScript</h3>
+                <p>Dynamic interactions</p>
             </div>
-
-            <div class="card">
-                <i class="fa-brands fa-react"></i>
-                <h3>React</h3>
+            <!-- SQL -->
+            <div class="skill-item">
+                <div class="skill-icon">
+                    <svg viewBox="0 0 448 512" fill="currentColor">
+                        <path
+                            d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z" />
+                    </svg>
+                </div>
+                <h3>SQL</h3>
+                <p>Database management</p>
             </div>
-
-            <div class="card">
-                <i class="fa-brands fa-github"></i>
-                <h3>GitHub</h3>
+            <!-- C -->
+            <div class="skill-item">
+                <div class="skill-icon">
+                    <svg viewBox="0 0 384 512" fill="currentColor">
+                        <path
+                            d="M329.4 41.4C282.8 14.4 233.1 0 184 0 134 0 85.3 14.4 38.6 41.4 13.5 55.4 0 83 0 113.1v285.8c0 30.1 13.5 57.7 38.6 71.7C85.3 497.6 134 512 184 512c49.1 0 98.8-14.4 145.4-41.4 25.1-14 38.6-41.6 38.6-71.7V113.1c0-30.1-13.5-57.7-38.6-71.7zM184 466.7c-40.4 0-80.1-12-117.4-34.8-16.6-10.2-25.5-27.1-25.5-46.1V126.2c0-19 8.9-35.9 25.5-46.1C103.9 57.3 143.6 45.3 184 45.3c40.4 0 80.1 12 117.4 34.8 16.6 10.2 25.5 27.1 25.5 46.1v259.6c0 19-8.9 35.9-25.5 46.1-37.3 22.8-77 34.8-117.4 34.8zM245.9 146.4c-16.5-10.9-36.8-16.5-58.4-16.5-55.2 0-99.7 41.6-99.7 96.6 0 55.1 44.5 96.6 99.7 96.6 21.6 0 41.9-5.6 58.4-16.5 13.5-8.9 32.2-7.5 43.8 3.3 13.1 12.2 14.5 32 3.1 45.8-23.7 28.7-60.8 44.9-105.3 44.9-88.6 0-160-64.2-160-155.6s71.4-155.6 160-155.6c44.5 0 81.6 16.2 105.3 44.9 11.4 13.8 10 33.6-3.1 45.8-11.6 10.8-30.3 12.2-43.8 3.3z" />
+                    </svg>
+                </div>
+                <h3>C Lang</h3>
+                <p>Core programming</p>
             </div>
-
-            <div class="card">
-                <i class="fa-solid fa-database"></i>
-                <h3>Supabase</h3>
+            <!-- Data Struct -->
+            <div class="skill-item">
+                <div class="skill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="16" y="16" width="6" height="6" rx="1"></rect>
+                        <rect x="2" y="16" width="6" height="6" rx="1"></rect>
+                        <rect x="9" y="2" width="6" height="6" rx="1"></rect>
+                        <path d="M5 16v-3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"></path>
+                        <path d="M12 8v3"></path>
+                    </svg>
+                </div>
+                <h3>DSA</h3>
+                <p>Logic & Algorithms</p>
             </div>
-
         </div>
-
     </section>
 
-    <!-- ================= PROJECTS ================= -->
-
-    <section class="projects" id="projects">
-
-        <div class="section-title">
-            <h2>Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-header center">
+            <span class="sub-heading">Portfolio</span>
+            <h2>Selected Works</h2>
         </div>
-
-        <div class="project-container">
-
-            <div class="project-card">
-
-                <h3>FitFusion</h3>
-
-                <p>
-                    BMI Calculator & Health Tracker built using React and
-                    Supabase.
-                </p>
-
-                <a href="#">
-                    View Project
-                </a>
-
+        <div class="projects-list">
+            <!-- Project 1 -->
+            <div class="project-row">
+                <div class="project-visual">
+                    <img src="images/registration-project.png" alt="Registration Form">
+                </div>
+                <div class="project-info">
+                    <div class="project-number">01</div>
+                    <h3>Registration Form</h3>
+                    <p>A beautifully designed, responsive registration form built using modern HTML and CSS techniques.
+                        Features a clean user interface with subtle focus states.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>UI Design</span>
+                    </div>
+                    <a href="https://lalitamakwana.github.io/registration-form-version_2/" target="_blank"
+                        class="btn btn-primary">Live Preview <svg viewBox="0 0 24 24" width="16" height="16"
+                            stroke="currentColor" stroke-width="2" fill="none">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
+                </div>
             </div>
-
-            <div class="project-card">
-
-                <h3>Portfolio Website</h3>
-
-                <p>
-                    Responsive personal portfolio with modern animations
-                    and glassmorphism.
-                </p>
-
-                <a href="#">
-                    View Project
-                </a>
-
+            <!-- Project 2 (Reversed) -->
+            <div class="project-row reverse">
+                <div class="project-visual">
+                    <img src="images/university-project.png" alt="University Website">
+                </div>
+                <div class="project-info">
+                    <div class="project-number">02</div>
+                    <h3>University Website</h3>
+                    <p>A comprehensive multi-page university website featuring a modern layout, responsive design, and
+                        integrated Supabase authentication for user portals.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Supabase</span>
+                    </div>
+                    <a href="https://lalitamakwana.github.io/university-website/" target="_blank"
+                        class="btn btn-primary">Live Preview <svg viewBox="0 0 24 24" width="16" height="16"
+                            stroke="currentColor" stroke-width="2" fill="none">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
+                </div>
             </div>
-
+            <!-- Project 3 -->
+            <div class="project-row">
+                <div class="project-visual">
+                    <img src="images/portfolio-project.png" alt="Personal Portfolio">
+                </div>
+                <div class="project-info">
+                    <div class="project-number">03</div>
+                    <h3>Personal Portfolio (V1)</h3>
+                    <p>The initial version of my personal portfolio website, created to showcase my web development
+                        journey, skills, and past projects in a single-page layout.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="https://lalitamakwana.github.io/portfolio-website/" target="_blank"
+                        class="btn btn-primary">Live Preview <svg viewBox="0 0 24 24" width="16" height="16"
+                            stroke="currentColor" stroke-width="2" fill="none">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
+                </div>
+            </div>
         </div>
-
     </section>
 
-    <!-- ================= CONTACT ================= -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info-wrap">
+                <h2>Let's build something <br><span class="highlight">amazing</span> together.</h2>
+                <p class="contact-subtitle">I'm currently looking for internship opportunities and exciting projects.
+                    Feel free to connect!</p>
 
-    <section class="contact" id="contact">
-
-        <div class="section-title">
-
-            <h2>Contact Me</h2>
-
-            <p>
-                Let's build something amazing together.
-            </p>
-
+                <div class="contact-details">
+                    <a href="mailto:lalitamakwana08@gmail.com" class="contact-item">
+                        <div class="icon-box"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                                stroke-width="2" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg></div>
+                        <div class="item-text">
+                            <span>Email</span>
+                            <strong>lalitamakwana08@gmail.com</strong>
+                        </div>
+                    </a>
+                    <a href="https://github.com/lalitamakwana" target="_blank" class="contact-item">
+                        <div class="icon-box"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                                stroke-width="2" fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></div>
+                        <div class="item-text">
+                            <span>Github</span>
+                            <strong>github.com/lalitamakwana</strong>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <div class="icon-box"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                                stroke-width="2" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg></div>
+                        <div class="item-text">
+                            <span>Location</span>
+                            <strong>Ahmedabad, India</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrap">
+                <form class="contact-form">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Send Message <svg viewBox="0 0 24 24"
+                            width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg></button>
+                </form>
+            </div>
         </div>
-
-        <form>
-
-            <input type="text" placeholder="Your Name">
-
-            <input type="email" placeholder="Your Email">
-
-            <textarea placeholder="Your Message"></textarea>
-
-            <button>
-                Send Message
-            </button>
-
-        </form>
-
     </section>
 
-    <!-- ================= FOOTER ================= -->
-
+    <!-- Footer -->
     <footer>
-
-        <p>
-
-            © 2026 Harshit | Frontend Developer
-
-        </p>
-
+        <div class="footer-content">
+            <div class="logo"><span class="logo-code">&lt;LM /&gt;</span> Lalita.</div>
+            <p>&copy; 2026 Lalita Makwana. Built with HTML & CSS</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Animations Script -->
+    <script>
+        // Intersection Observer for fade-up animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-header, .about-visual, .about-text, .skill-item, .project-row, .contact-info-wrap, .contact-form-wrap').forEach(el => {
+            el.classList.add('fade-up');
+            observer.observe(el);
+        });
+
+        // Scroll Progress Bar
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Active Navigation Link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const navObserverOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${entry.target.id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, navObserverOptions);
+
+        sections.forEach(section => navObserver.observe(section));
+
+        // Mobile Navigation
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinksContainer = document.getElementById('nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinksContainer.classList.remove('active');
+            });
+        });
+
+        // Background Particles
+        const createParticles = () => {
+            const container = document.createElement('div');
+            container.className = 'bg-particles';
+            document.body.prepend(container);
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                particle.style.animationDelay = `-${Math.random() * 20}s`;
+                container.appendChild(particle);
+            }
+        };
+        createParticles();
+    </script>
 </body>
 
 </html>
