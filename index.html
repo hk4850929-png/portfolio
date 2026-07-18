@@ -1,500 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit | Frontend Developer</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-<title>Harshit | Portfolio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
+    <!-- ================= NAVBAR ================= -->
 
-<header>
+    <header>
 
-<a href="#" class="logo">Harshit.</a>
+        <div class="logo">
+            Harshit
+        </div>
 
-<nav>
+        <nav id="navbar">
 
-<a href="#home" class="active">Home</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
 
-<a href="#about">About</a>
+        </nav>
 
-<a href="#skills">Skills</a>
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
 
-<a href="#projects">Projects</a>
+    </header>
 
-<a href="#certificates">Certificates</a>
+    <!-- ================= HERO ================= -->
 
-<a href="#contact">Contact</a>
+    <section class="hero" id="home">
 
-</nav>
+        <div class="hero-text">
 
-<div class="menu">
+            <h4>Hello 👋</h4>
 
-<i class="fa-solid fa-bars"></i>
+            <h1>
+                Hi, I'm <span>Harshit</span>
+            </h1>
 
-</div>
+            <h3>Frontend Developer</h3>
 
-</header>
+            <p>
+                I build modern, responsive and attractive websites
+                using HTML, CSS and JavaScript.
+            </p>
 
-<!-- HERO -->
+            <div class="hero-btn">
 
-<section class="hero" id="home">
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
 
-<div class="hero-text">
+                <a href="#projects" class="btn2">
+                    View Projects
+                </a>
 
-<h4>Hello, I'm</h4>
+            </div>
 
-<h1>Harshit Kumar</h1>
+        </div>
 
-<h3>BCA Student & Frontend Developer</h3>
+        <div class="hero-image">
 
-<p>
+            <img src="images/boy.png" alt="Developer">
 
-I build beautiful, responsive and modern websites using HTML, CSS and JavaScript. I enjoy creating attractive UI designs and learning new technologies.
+        </div>
 
-</p>
+    </section>
 
-<div class="buttons">
+    <!-- ================= ABOUT ================= -->
 
-<a href="#projects" class="btn">
+    <section class="about" id="about">
 
-View Projects
+        <div class="section-title">
 
-</a>
+            <h2>About Me</h2>
 
-<a href="#contact" class="btn2">
+            <p>
+                I'm a passionate Frontend Developer and BCA student.
+                I love creating beautiful websites with clean UI and
+                smooth user experience.
+            </p>
 
-Contact Me
+        </div>
 
-</a>
+    </section>
 
-</div>
+    <!-- ================= SKILLS ================= -->
 
-<div class="social-icons">
+    <section class="skills" id="skills">
 
-<a href="#"><i class="fab fa-github"></i></a>
+        <div class="section-title">
+            <h2>Skills</h2>
+        </div>
 
-<a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="skill-container">
 
-<a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
 
-<a href="#"><i class="fas fa-envelope"></i></a>
+            <div class="card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+            </div>
 
-</div>
+            <div class="card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+            </div>
 
-</div>
+            <div class="card">
+                <i class="fa-brands fa-react"></i>
+                <h3>React</h3>
+            </div>
 
-<div class="hero-image">
+            <div class="card">
+                <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+            </div>
 
-<img src="profile.png" alt="Harshit">
+            <div class="card">
+                <i class="fa-solid fa-database"></i>
+                <h3>Supabase</h3>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ABOUT -->
+    <!-- ================= PROJECTS ================= -->
 
-<section id="about">
+    <section class="projects" id="projects">
 
-<div class="section-title">
+        <div class="section-title">
+            <h2>Projects</h2>
+        </div>
 
-<h2>About Me</h2>
+        <div class="project-container">
 
-<p>Know more about me</p>
+            <div class="project-card">
 
-</div>
+                <h3>FitFusion</h3>
 
-<div class="about-container">
+                <p>
+                    BMI Calculator & Health Tracker built using React and
+                    Supabase.
+                </p>
 
-<div class="about-image">
+                <a href="#">
+                    View Project
+                </a>
 
-<img src="about.png" alt="About">
+            </div>
 
-</div>
+            <div class="project-card">
 
-<div class="about-content">
+                <h3>Portfolio Website</h3>
 
-<h3>BCA Student</h3>
+                <p>
+                    Responsive personal portfolio with modern animations
+                    and glassmorphism.
+                </p>
 
-<p>
+                <a href="#">
+                    View Project
+                </a>
 
-I am Harshit Kumar, currently pursuing Bachelor of Computer Applications (BCA). I am passionate about Frontend Development and enjoy building responsive websites with modern UI.
+            </div>
 
-</p>
+        </div>
 
-<div class="about-info">
+    </section>
 
-<div class="about-box">
+    <!-- ================= CONTACT ================= -->
 
-<h4>Name</h4>
+    <section class="contact" id="contact">
 
-<p>Harshit Kumar</p>
+        <div class="section-title">
 
-</div>
+            <h2>Contact Me</h2>
 
-<div class="about-box">
+            <p>
+                Let's build something amazing together.
+            </p>
 
-<h4>Education</h4>
+        </div>
 
-<p>BCA Student</p>
+        <form>
 
-</div>
+            <input type="text" placeholder="Your Name">
 
-<div class="about-box">
+            <input type="email" placeholder="Your Email">
 
-<h4>Location</h4>
+            <textarea placeholder="Your Message"></textarea>
 
-<p>India</p>
+            <button>
+                Send Message
+            </button>
 
-</div>
+        </form>
 
-<div class="about-box">
+    </section>
 
-<h4>Email</h4>
+    <!-- ================= FOOTER ================= -->
 
-<p>your@email.com</p>
+    <footer>
 
-</div>
+        <p>
 
-</div>
+            © 2026 Harshit | Frontend Developer
 
-</div>
+        </p>
 
-</div>
+    </footer>
 
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<div class="section-title">
-
-<h2>Skills</h2>
-
-<p>Technologies I Know</p>
-
-</div>
-
-<div class="skills-container">
-
-<div class="skill-card">
-
-<i class="fab fa-html5"></i>
-
-<h3>HTML</h3>
-
-<div class="progress">
-
-<span style="width:95%"></span>
-
-</div>
-
-<p>95%</p>
-
-</div>
-
-<div class="skill-card">
-
-<i class="fab fa-css3-alt"></i>
-
-<h3>CSS</h3>
-
-<div class="progress">
-
-<span style="width:90%"></span>
-
-</div>
-
-<p>90%</p>
-
-</div>
-
-<div class="skill-card">
-
-<i class="fab fa-js"></i>
-
-<h3>JavaScript</h3>
-
-<div class="progress">
-
-<span style="width:80%"></span>
-
-</div>
-
-<p>80%</p>
-
-</div>
-
-</div>
-
-</section>
-<!-- =========================
-PROJECTS
-========================= -->
-
-<section id="projects">
-
-<div class="section-title">
-<h2>My Projects</h2>
-<p>Some of My Recent Work</p>
-</div>
-
-<div class="projects-grid">
-
-<div class="project-card">
-
-<img src="fitfusion.png" alt="FitFusion">
-
-<div class="project-content">
-
-<h3>FitFusion</h3>
-
-<p>
-A responsive BMI Calculator built using HTML, CSS,
-JavaScript and Supabase.
-</p>
-
-<div class="project-buttons">
-
-<a href="#" class="btn">
-Live Demo
-</a>
-
-<a href="#" class="btn2">
-GitHub
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="registration.png" alt="Registration">
-
-<div class="project-content">
-
-<h3>Registration Form</h3>
-
-<p>
-A modern responsive registration form with beautiful
-glassmorphism UI and validation.
-</p>
-
-<div class="project-buttons">
-
-<a href="#" class="btn">
-Live Demo
-</a>
-
-<a href="#" class="btn2">
-GitHub
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="portfolio.png" alt="Portfolio">
-
-<div class="project-content">
-
-<h3>Student Portfolio</h3>
-
-<p>
-A modern responsive portfolio website showcasing
-skills, education, projects and certificates.
-</p>
-
-<div class="project-buttons">
-
-<a href="#" class="btn">
-Live Demo
-</a>
-
-<a href="#" class="btn2">
-GitHub
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-CERTIFICATES
-========================= -->
-
-<section id="certificates">
-
-<div class="section-title">
-
-<h2>Certificates</h2>
-
-<p>My Achievements</p>
-
-</div>
-
-<div class="certificates-grid">
-
-<div class="certificate-card">
-
-<img src="certificate1.png">
-
-<div class="certificate-content">
-
-<h3>HTML & CSS</h3>
-
-<p>Successfully completed HTML & CSS Course.</p>
-
-</div>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="certificate2.png">
-
-<div class="certificate-content">
-
-<h3>JavaScript</h3>
-
-<p>Successfully completed JavaScript Course.</p>
-
-</div>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="certificate3.png">
-
-<div class="certificate-content">
-
-<h3>Frontend Development</h3>
-
-<p>Successfully completed Frontend Development Training.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-CONTACT
-========================= -->
-
-<section id="contact">
-
-<div class="section-title">
-
-<h2>Contact Me</h2>
-
-<p>Let's Work Together</p>
-
-</div>
-
-<div class="contact-container">
-
-<div class="contact-info">
-
-<h3>Get In Touch</h3>
-
-<p><i class="fa-solid fa-user"></i> Harshit Kumar</p>
-
-<p><i class="fa-solid fa-envelope"></i> your@email.com</p>
-
-<p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
-
-<p><i class="fa-solid fa-location-dot"></i> India</p>
-
-</div>
-
-<form class="contact-form">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<input type="text" placeholder="Subject">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button class="btn">
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer>
-
-<div class="social-icons">
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fab fa-linkedin"></i></a>
-
-<a href="#"><i class="fab fa-instagram"></i></a>
-
-<a href="#"><i class="fa-solid fa-envelope"></i></a>
-
-</div>
-
-<p>
-
-© 2026 Harshit Kumar | All Rights Reserved
-
-</p>
-
-</footer>
-
-<button class="top-btn">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
